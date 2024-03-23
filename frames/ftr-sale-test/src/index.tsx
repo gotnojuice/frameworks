@@ -1,4 +1,5 @@
 import { serve } from '@hono/node-server'
+import { handle } from 'frog/vercel'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev'
@@ -6,7 +7,7 @@ import { devtools } from 'frog/dev'
 
 export const app = new Frog({
   // Supply a Hub to enable frame verification.
-  // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+// hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 })
 
 app.use('/*', serveStatic({ root: './public' }))
@@ -53,7 +54,7 @@ app.frame('/', (c) => {
     ),
     intents: [
       <Button.Mint
-        target="eip155:7777777:0x060f3edd18c47f59bd23d063bbeb9aa4a8fec6df:69420"
+        target="eip155:84532:0xCA831D39367C7dd314bA9DC3641153b57Ed8ba73:1"
       >
         Mint
       </Button.Mint>,
@@ -71,3 +72,6 @@ serve({
   fetch: app.fetch,
   port,
 })
+
+export const GET = handle(app)
+export const POST = handle(app)
