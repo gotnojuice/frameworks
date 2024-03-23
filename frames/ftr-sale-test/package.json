@@ -3,8 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "frog vercel-build",
     "dev": "frog dev",
-    "serve": "tsx src/index.tsx"
+    "serve": "tsx src/index.tsx",
+    "deploy": "vercel"
   },
   "dependencies": {
     "@coinbase/onchainkit": "^0.11.0",
@@ -14,6 +16,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "tsx": "^3.12.2"
+    "tsx": "^3.12.2",
+    "vercel": "^33.6.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.13.0"
   }
 }
