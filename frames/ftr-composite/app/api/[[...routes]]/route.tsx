@@ -6,6 +6,8 @@ import { devtools } from 'frog/dev'
 import { handle } from 'frog/next'
 import { serveStatic } from 'frog/serve-static'
 
+
+
 const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
@@ -57,14 +59,14 @@ app.frame('/', (c) => {
       </div>
     ),
     intents: [
-      <TextInput placeholder="Enter custom fruit..." />,
-      <Button value="apples">Apples</Button>,
-      <Button value="oranges">Oranges</Button>,
-      <Button value="bananas">Bananas</Button>,
-      status === 'response' && <Button.Reset>Reset</Button.Reset>,
+      <Button.Link href="https://zora.co/collect/base:0x07ae0f030b21b67285fbbdedac0b095bf37527bb/1">MINT!</Button.Link>,
+
     ],
   })
 })
+
+
+
 
 devtools(app, { serveStatic })
 
